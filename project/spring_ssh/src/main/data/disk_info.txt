@@ -1,0 +1,9 @@
+/dev/mapper/rhel-root   47G   13G   35G   28% /
+devtmpfs               897M     0  897M    0% /dev
+tmpfs                  912M     0  912M    0% /dev/shm
+tmpfs                  912M  1.3M  911M    1% /run
+tmpfs                  912M     0  912M    0% /sys/fs/cgroup
+/dev/sda1             1014M  179M  836M   18% /boot
+tmpfs                  183M   20K  183M    1% /run/user/1000
+tmpfs                  183M     0  183M    0% /run/user/0
+/dev/sr0               3.8G  3.8G     0  100% /run/media/e3base/RHEL-7.4 Server.x86_64

@@ -1,0 +1,1 @@
+Linux,nn01,3.10.0-693.el7.x86_64,#1SMPThuJul619:56:57EDT2017,x86_64,x86_64,GNU/Linux
