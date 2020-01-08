@@ -1,0 +1,10 @@
+   Node_Name     Hostname   Status     Capacity   DFS_Used   Non_DFS    DFS_Remain DFS_Used%   Contact_Time 
+--------------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------------  
+ 192.168.47.131  dn01         Normal    140.91 GB  378.99 MB  32.93 GB   107.61 GB   0.26%     Jan 03 15:26
+ 192.168.47.132  nn02         Normal    140.91 GB  378.98 MB  21.04 GB   119.50 GB   0.26%     Jan 03 15:26
+
+ DFS Total Config_Capacity:   281.82 GB
+ DFS Total Present_Capacity:  227.85 GB
+ DFS Total Used ( Used% ):    757.97 MB (  0.32% )
+
+ DFS Total Datanodes:   

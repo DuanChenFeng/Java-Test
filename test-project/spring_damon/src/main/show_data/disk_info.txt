@@ -1,0 +1,8 @@
+/dev/mapper/rhel-root   47G   15G   33G  31% /
+devtmpfs               897M     0  897M   0% /dev
+tmpfs                  912M     0  912M   0% /dev/shm
+tmpfs                  912M  1.5M  911M   1% /run
+tmpfs                  912M     0  912M   0% /sys/fs/cgroup
+/dev/sda1             1014M  179M  836M  18% /boot
+tmpfs                  183M     0  183M   0% /run/user/1000
+tmpfs                  183M  8.0K  183M   1% /run/user/42

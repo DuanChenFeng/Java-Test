@@ -1,0 +1,178 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dfc</groupId>
+  <artifactId>spring_damon</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+ 	
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+	
+		<!-- 核心模块，包括自动配置支持，日志 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>2.0.2.RELEASE</version>
+		</dependency>
+		
+		<!-- 测试模块， 包括 Junit -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.0.2.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 添加支持web的模块 -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	        <version>2.0.2.RELEASE</version>
+	    </dependency>
+		
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		
+    	<dependency>
+	        <groupId>mysql</groupId>
+	        <artifactId>mysql-connector-java</artifactId>
+	    	<version>8.0.11</version> 
+    	</dependency>
+	    
+	   	<!-- 用户 权限安装管理控制,整合security框架 -->
+	   	<!-- <dependency>
+  	    	<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-starter-security</artifactId>
+  			<version>2.0.2.RELEASE</version>
+		</dependency> -->
+		
+		<!-- 定时框架quartz -->
+		<!-- <dependency>
+			<groupId>org.quartz-scheduler</groupId>
+      		<artifactId>quartz</artifactId>
+      		<version>2.2.3</version>
+		</dependency> -->
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+            <version>2.0.2.RELEASE</version>
+        </dependency>
+		
+		<!-- <dependency>
+			<groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.3.12.RELEASE</version>
+		</dependency>
+		
+		 <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.3.16.RELEASE</version>
+        </dependency> -->
+	    
+	    <!-- 但springBoot对调试支持很好，修改之后可以实时生效，需要添加以下的配置 -->
+	     <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <version>2.0.2.RELEASE</version>
+	        <optional>true</optional>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+			<version>8.5.27</version>
+    	</dependency>
+    	
+    	<!-- 依赖远程ssh框架 -->
+    	<dependency>
+    		<groupId>com.jcraft</groupId>
+    		<artifactId>jsch</artifactId>
+    		<version>0.1.55</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>ch.ethz.ganymed</groupId>
+		    <artifactId>ganymed-ssh2</artifactId>
+		    <version>262</version>
+		</dependency>
+		
+		<!-- log4j日志 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		
+		<!-- <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.3.8.RELEASE</version>
+        </dependency> -->
+		
+	</dependencies>
+	
+	<build>
+	  <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+					<exclude>bootstrap-test.properties</exclude>
+                    <exclude>bootstrap-dev.properties</exclude>
+                    <exclude>bootstrap-pro.properties</exclude>
+                    <exclude>bootstrap.properties</exclude>
+                    <exclude>static/font/*.woff</exclude>
+					<exclude>static/font/*.woff2</exclude>
+					<exclude>static/font/*.ttf</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>bootstrap-${env}.properties</include>
+                    <include>bootstrap.properties</include>
+                </includes>
+            </resource>
+        </resources>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.0.2.RELEASE</version>
+				<configuration>
+	                <fork>true</fork>
+	            </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>
