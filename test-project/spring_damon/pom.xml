@@ -46,7 +46,7 @@
     	<dependency>
 	        <groupId>mysql</groupId>
 	        <artifactId>mysql-connector-java</artifactId>
-	    	<version>8.0.11</version> 
+	    	<version>8.0.28</version> 
     	</dependency>
 	    
 	   	<!-- 用户 权限安装管理控制,整合security框架 -->
